@@ -1,0 +1,28 @@
+{
+  "description": "Example least-privilege group policy template. Replace group_name and resource scopes with actual values before use. Not a live policy.",
+  "group_name": "operators",
+  "policy": {
+    "Version": "1.1",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "ecs:instances:start",
+          "ecs:instances:stop",
+          "ecs:instances:reboot"
+        ],
+        "Resource": "urn:huawei:ecs:*:*:instance:PLACEHOLDER_PROJECT_ID"
+      },
+      {
+        "Effect": "Deny",
+        "Action": [
+          "iam:*:delete*",
+          "iam:*:create*"
+        ],
+        "Resource": "*"
+      }
+    ]
+  },
+  "mfa_required": true,
+  "notes": "Operators can start/stop/reboot instances but cannot modify IAM. Adjust actions to match the actual role's responsibilities before applying."
+}
