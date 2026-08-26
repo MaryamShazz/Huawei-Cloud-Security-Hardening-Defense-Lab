@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="Huawei Cloud Security Hardening & Defense Lab" width="100%"/>
-
 # Huawei Cloud Security Hardening & Defense Lab
 Nov 2025 - Augest 2026
 
