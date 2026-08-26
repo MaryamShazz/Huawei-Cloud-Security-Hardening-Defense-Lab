@@ -1,0 +1,35 @@
+{
+  "description": "Example Cloud Eye alert threshold template. Values are a starting baseline, tune against actual observed usage.",
+  "instance_alerts": [
+    {
+      "metric": "cpu_utilization",
+      "threshold_percent": 85,
+      "evaluation_period_minutes": 5,
+      "consecutive_periods": 3,
+      "action": "notify"
+    },
+    {
+      "metric": "memory_utilization",
+      "threshold_percent": 90,
+      "evaluation_period_minutes": 5,
+      "consecutive_periods": 3,
+      "action": "notify"
+    },
+    {
+      "metric": "disk_utilization",
+      "threshold_percent": 85,
+      "evaluation_period_minutes": 10,
+      "consecutive_periods": 2,
+      "action": "notify"
+    },
+    {
+      "metric": "network_inbound_bytes",
+      "threshold": "PLACEHOLDER_BASELINE_PLUS_MARGIN",
+      "evaluation_period_minutes": 5,
+      "consecutive_periods": 2,
+      "action": "notify",
+      "notes": "Set once real traffic baseline is observed, per reports/risk-assessment.md follow-up item."
+    }
+  ],
+  "notification_channel": "PLACEHOLDER_TOPIC_OR_WEBHOOK"
+}

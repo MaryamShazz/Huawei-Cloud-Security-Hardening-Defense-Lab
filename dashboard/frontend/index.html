@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Huawei Cloud Security — Design Review Console</title>
+<style>
+  :root {
+    --bg: #0B1220;
+    --card: #162033;
+    --accent: #4FD1C5;
+    --accent2: #7DD3FC;
+    --success: #22C55E;
+    --warning: #FBBF24;
+    --danger: #EF4444;
+    --text: #E5E7EB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--text); margin-bottom: 4px; }
+  .subtitle { color: var(--accent2); margin-top: 0; margin-bottom: 28px; font-size: 0.95rem; }
+  .banner {
+    background: var(--card);
+    border: 1px solid #223049;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 28px;
+    font-size: 0.85rem;
+    color: #9aa5b1;
+  }
+  .banner strong { color: var(--warning); }
+  .score-row { display: flex; align-items: center; gap: 28px; margin-bottom: 32px; flex-wrap: wrap; }
+  .score-circle {
+    width: 140px; height: 140px; border-radius: 50%;
+    background: conic-gradient(var(--accent) 0% 87%, #223049 87% 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .score-inner {
+    width: 108px; height: 108px; border-radius: 50%;
+    background: var(--bg);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .score-inner .num { font-size: 2.1rem; font-weight: 700; }
+  .score-inner .den { font-size: 0.8rem; color: var(--accent2); }
+  .score-meta h2 { margin: 0 0 6px 0; font-size: 1.1rem; }
+  .score-meta p { margin: 0; color: #9aa5b1; font-size: 0.9rem; max-width: 480px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #223049; font-size: 0.9rem; }
+  th { color: var(--accent2); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.04em; }
+  .status { font-weight: 700; padding: 3px 10px; border-radius: 5px; font-size: 0.78rem; display: inline-block; }
+  .DESIGNED { background: rgba(125,211,252,0.15); color: var(--accent2); }
+  .PARTIALDESIGN { background: rgba(251,191,36,0.15); color: var(--warning); }
+  .ONLY { background: rgba(239,68,68,0.15); color: var(--danger); }
+  .events { background: var(--card); border-radius: 10px; padding: 18px 22px; margin-bottom: 32px; }
+  .events h2 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--accent2); margin-top: 0; }
+  .event-line { font-family: "SF Mono", Consolas, monospace; font-size: 0.85rem; padding: 4px 0; }
+  .event-line.pending { color: var(--accent2); }
+  .event-line.warn { color: var(--warning); }
+  .event-line.fail { color: var(--danger); }
+  .cta { background: var(--card); border: 1px solid var(--accent); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; font-size: 0.9rem; }
+  .cta a { color: var(--accent); }
+  footer { color: #6b7686; font-size: 0.78rem; text-align: center; margin-top: 20px; }
+  footer a { color: var(--accent2); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Huawei Cloud Security — Design Review Console</h1>
+  <p class="subtitle">Huawei Cloud Security Hardening &amp; Defense Lab — static design-stage snapshot</p>
+
+  <div class="banner">
+    <strong>No live Huawei Cloud environment has been deployed.</strong> This page displays design-review status
+    from <code>validation/findings-summary.md</code> and <code>docs/design-baseline-score.md</code>. It is not
+    connected to any Huawei Cloud account, does not call any API, and every "Designed" status below means the
+    control has been fully specified and reviewed on paper — not verified against a live account. It is not an
+    official Huawei Cloud product.
+  </div>
+
+  <div class="cta">
+    Want to actually run something and see live output on your own machine? See
+    <a href="../../local-lab/README.md">local-lab/</a> — a runnable local simulation of these tests, clearly
+    labeled as a simulation rather than live Huawei Cloud telemetry.
+  </div>
+
+  <div class="score-row">
+    <div class="score-circle"><div class="score-inner"><span class="num">87</span><span class="den">/ 100</span></div></div>
+    <div class="score-meta">
+      <h2>Design Baseline Score</h2>
+      <p>Weighted across nine domains, scoring how complete and well-specified the <em>design</em> is —
+      not a verified live posture. Full scoring rationale in <code>docs/design-baseline-score.md</code>.
+      This will be renamed "Validated Security Posture Score" once real deployment and testing replace
+      these design-stage estimates.</p>
+    </div>
+  </div>
+
+  <table>
+    <thead><tr><th>Domain</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>IAM</td><td><span class="status DESIGNED">DESIGNED</span></td></tr>
+      <tr><td>Network Segmentation</td><td><span class="status DESIGNED">DESIGNED</span></td></tr>
+      <tr><td>Security Groups</td><td><span class="status DESIGNED">DESIGNED</span></td></tr>
+      <tr><td>Cloud Firewall</td><td><span class="status DESIGNED">DESIGNED</span></td></tr>
+      <tr><td>Storage Security</td><td><span class="status DESIGNED">DESIGNED</span></td></tr>
+      <tr><td>Logging</td><td><span class="status DESIGNED">DESIGNED</span></td></tr>
+      <tr><td>Monitoring</td><td><span class="status PARTIALDESIGN">DESIGNED (thresholds unvalidated)</span></td></tr>
+      <tr><td>Backup &amp; Recovery</td><td><span class="status PARTIALDESIGN">DESIGNED (not yet executed)</span></td></tr>
+      <tr><td>Incident Response</td><td><span class="status ONLY">DESIGNED ONLY (no tabletop scheduled)</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="events">
+    <h2>Test Register Status (from validation/test-register.md)</h2>
+    <div class="event-line pending">[PENDING] T-001 — Unauthorized SSH attempt — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-002 — Direct internet access to private ECS — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-003 — Authorized bastion → private ECS path — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-004 — Database tier isolation — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-005 — Cloud Firewall deny-list — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-006 — Configuration change captured by CTS — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-007 — Unauthenticated storage access — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-008 — Cloud Eye threshold alert — designed, awaiting deployment</div>
+    <div class="event-line pending">[PENDING] T-009 — Snapshot restore — designed, awaiting deployment</div>
+    <div class="event-line fail">[NOT SCHEDULED] T-010 — Incident response tabletop exercise</div>
+  </div>
+
+  <footer>
+    Data source: <code>validation/findings-summary.md</code>, <code>validation/test-register.md</code>,
+    <code>docs/design-baseline-score.md</code>. Update this file by hand if those documents change —
+    see <code>dashboard/README.md</code>. For genuinely runnable output, use <code>local-lab/</code> instead.
+  </footer>
+</div>
+</body>
+</html>

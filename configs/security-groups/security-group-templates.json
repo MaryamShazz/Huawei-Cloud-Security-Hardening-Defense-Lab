@@ -1,0 +1,61 @@
+{
+  "description": "Example tiered security group templates matching the architecture in docs/architecture.md. Replace placeholders before use.",
+  "groups": [
+    {
+      "name": "sg-bastion",
+      "inbound": [
+        {
+          "protocol": "TCP",
+          "port": 22,
+          "source": "PLACEHOLDER_ADMIN_CIDR",
+          "notes": "SSH restricted to known administrative source IPs only."
+        }
+      ],
+      "outbound": [
+        {
+          "protocol": "TCP",
+          "port": 22,
+          "destination": "sg-app-tier",
+          "notes": "Bastion can reach the application tier over SSH, nothing else."
+        }
+      ]
+    },
+    {
+      "name": "sg-app-tier",
+      "inbound": [
+        {
+          "protocol": "TCP",
+          "port": 22,
+          "source": "sg-bastion",
+          "notes": "SSH only from the bastion security group."
+        },
+        {
+          "protocol": "TCP",
+          "port": 8080,
+          "source": "PLACEHOLDER_LOAD_BALANCER_SG",
+          "notes": "Application port, reachable only from the load balancer tier."
+        }
+      ],
+      "outbound": [
+        {
+          "protocol": "TCP",
+          "port": 5432,
+          "destination": "sg-db-tier",
+          "notes": "Application reaches the database on its specific port only."
+        }
+      ]
+    },
+    {
+      "name": "sg-db-tier",
+      "inbound": [
+        {
+          "protocol": "TCP",
+          "port": 5432,
+          "source": "sg-app-tier",
+          "notes": "Database port reachable only from the application tier, never from the bastion or the internet."
+        }
+      ],
+      "outbound": []
+    }
+  ]
+}
