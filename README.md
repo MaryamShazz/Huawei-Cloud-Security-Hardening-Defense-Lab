@@ -1,21 +1,24 @@
 <div align="center">
 
 # Huawei Cloud Security Hardening & Defense Lab
-Nov 2025 - Augest 2026
 
-Designing, securing, and documenting a production-ready Huawei Cloud environment through identity management, network isolation, firewall enforcement, monitoring, logging, and infrastructure hardening.
+*November 2025 – August 2026*
 
-![Huawei Cloud](https://img.shields.io/badge/Huawei%20Cloud-C7000F?style=flat-square)
-![Cloud Security](https://img.shields.io/badge/Cloud%20Security-4FD1C5?style=flat-square&labelColor=0B1220)
-![IAM](https://img.shields.io/badge/IAM-7DD3FC?style=flat-square&labelColor=0B1220)
-![VPC](https://img.shields.io/badge/VPC-7DD3FC?style=flat-square&labelColor=0B1220)
-![Security Groups](https://img.shields.io/badge/Security%20Groups-4FD1C5?style=flat-square&labelColor=0B1220)
-![Cloud Firewall](https://img.shields.io/badge/Cloud%20Firewall-4FD1C5?style=flat-square&labelColor=0B1220)
-![Cloud Eye](https://img.shields.io/badge/Cloud%20Eye-7DD3FC?style=flat-square&labelColor=0B1220)
-![CTS](https://img.shields.io/badge/Cloud%20Trace%20Service-7DD3FC?style=flat-square&labelColor=0B1220)
-![Threat Model](https://img.shields.io/badge/Threat%20Model-FBBF24?style=flat-square&labelColor=0B1220)
-![Documentation](https://img.shields.io/badge/Documentation-E5E7EB?style=flat-square&labelColor=0B1220)
-![Portfolio Project](https://img.shields.io/badge/Portfolio%20Project-FBBF24?style=flat-square&labelColor=0B1220)
+Designing, securing, and documenting a production ready Huawei Cloud environment through identity management, network isolation, firewall enforcement, monitoring, logging, and infrastructure hardening.
+
+<br>
+
+![Huawei Cloud](https://img.shields.io/badge/Huawei%20Cloud-C7000F?style=for-the-badge)
+![Cloud Security](https://img.shields.io/badge/Cloud%20Security-374151?style=for-the-badge)
+![IAM](https://img.shields.io/badge/IAM-374151?style=for-the-badge)
+![VPC](https://img.shields.io/badge/VPC-374151?style=for-the-badge)
+![Security Groups](https://img.shields.io/badge/Security%20Groups-374151?style=for-the-badge)
+![Cloud Firewall](https://img.shields.io/badge/Cloud%20Firewall-374151?style=for-the-badge)
+![Cloud Eye](https://img.shields.io/badge/Cloud%20Eye-374151?style=for-the-badge)
+![Cloud Trace](https://img.shields.io/badge/Cloud%20Trace-374151?style=for-the-badge)
+![Threat Model](https://img.shields.io/badge/Threat%20Model-F59E0B?style=for-the-badge)
+![Documentation](https://img.shields.io/badge/Documentation-6B7280?style=for-the-badge)
+![Portfolio Project](https://img.shields.io/badge/Portfolio%20Project-C7000F?style=for-the-badge)
 
 </div>
 
