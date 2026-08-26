@@ -61,14 +61,6 @@ The question this project answers isn't "how do I finish the lab." It's closer t
 
 A full breakdown of each component, the reasoning behind the subnet split, and the traffic flow between layers is in [`docs/architecture.md`](docs/architecture.md). The reasoning behind specific architectural choices (why a bastion, why default-deny, why private storage) is recorded individually in [`docs/decisions/`](docs/decisions/).
 
-## Before / After Security Posture
-
-<img src="assets/before-after.png" alt="Before and after hardening" width="100%"/>
-
-## Attack Surface Before / After
-
-<img src="assets/attack-surface-before-after.png" alt="Attack surface before and after hardening" width="100%"/>
-
 ## Security Timeline
 
 The deployment lifecycle, from a default provisioned account through to final risk review, is laid out as a timeline in [`docs/security-timeline.md`](docs/security-timeline.md) — a higher-level companion to the step-by-step build order in the deployment guide.
@@ -122,7 +114,7 @@ Cloud security engineering, threat modeling, identity and access management, net
 ## Repository Structure
 
 ```
-Huawei-Cloud-Security-Hardening-Lab/
+Huawei-Cloud-Security-Hardening-Defense-Lab/
 ├── README.md
 ├── LICENSE
 ├── SECURITY.md
@@ -218,7 +210,7 @@ Each module below follows the same layout: objective, why it matters, configurat
 - **[05 — Object Storage Security](modules/05-object-storage/README.md)** — Private buckets, encryption, versioning
 - **[06 — Logging](modules/06-logging/README.md)** — Account-wide Cloud Trace Service coverage
 - **[07 — Monitoring](modules/07-monitoring/README.md)** — Cloud Eye thresholds and alerting
-- **[08 — Backup & Recovery](modules/08-backup-recovery/README.md)** — Scheduled snapshots, tested restore
+- **[08 — Backup & Recovery](modules/08-backup-recovery/README.md)** — Scheduled snapshots, documented restore procedure
 - **[09 — Infrastructure Hardening](modules/09-infrastructure-hardening/README.md)** — Cross-checklist pass across every module above
 
 > **Security Insight**
