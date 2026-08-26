@@ -253,9 +253,7 @@ Full dashboard: [`validation/findings-summary.md`](validation/findings-summary.m
 
 ## Design Baseline Score
 
-<img src="assets/design-baseline-score.png" alt="Design baseline score: 87 out of 100" width="70%"/>
-
-This scores the completeness of the *design*, not a verified live posture — it will be renamed **Validated Security Posture Score** and recalculated from real test results once actual deployment happens. Full scoring methodology, including exactly why each domain earned the points it did, is in [`docs/design-baseline-score.md`](docs/design-baseline-score.md).
+The scores the completeness of the *design*, not a verified live posture — it will be renamed **Validated Security Posture Score** and recalculated from real test results once actual deployment happens. Full scoring methodology, including exactly why each domain earned the points it did, is in [`docs/design-baseline-score.md`](docs/design-baseline-score.md).
 
 ## Security Test Register
 
