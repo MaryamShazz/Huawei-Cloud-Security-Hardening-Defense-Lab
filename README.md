@@ -2,7 +2,7 @@
 
 # Huawei Cloud Security Hardening & Defense Lab
 
-*November 2025 – August 2026*
+Timeline: *November 2025 – August 2026*
 
 Designing, securing, and documenting a production ready Huawei Cloud environment through identity management, network isolation, firewall enforcement, monitoring, logging, and infrastructure hardening.
 
